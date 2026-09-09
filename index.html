@@ -26,7 +26,15 @@
     <meta property="og:type" content="website">
 
     <!-- Theme -->
-    <meta name="theme-color" content="#D4A373">
+    <meta name="theme-color" content="#021A34">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta property="og:image" content="assets/logo.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -278,22 +286,29 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 11px;
+            gap: 12px;
             font-family: "Space Grotesk", sans-serif;
             font-weight: 700;
             color: var(--dark);
+            text-decoration: none;
+            transition: opacity var(--transition), transform var(--transition);
         }
 
-        .logo-mark {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            display: grid;
-            place-items: center;
-            color: var(--white);
-            background:
-                linear-gradient(135deg, var(--bronze), #A96F35);
-            box-shadow: 0 7px 20px rgba(212, 163, 115, 0.35);
+        .logo:hover {
+            opacity: 0.94;
+            transform: translateY(-1px);
+        }
+
+        .brand-logo-img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            filter: drop-shadow(0 3px 10px rgba(2, 26, 52, 0.16));
+            transition: transform var(--transition);
+        }
+
+        .logo:hover .brand-logo-img {
+            transform: scale(1.06);
         }
 
         .logo-text {
@@ -303,15 +318,34 @@
         }
 
         .logo-text strong {
-            font-size: 1rem;
+            font-size: 1.12rem;
+            letter-spacing: -0.01em;
+            color: #021A34;
         }
 
         .logo-text span {
-            color: var(--muted);
-            font-size: 0.63rem;
-            letter-spacing: 0.12em;
+            color: var(--bronze);
+            font-size: 0.64rem;
+            letter-spacing: 0.14em;
+            font-weight: 600;
             text-transform: uppercase;
             margin-top: 3px;
+        }
+
+        .footer-logo {
+            color: var(--white);
+        }
+
+        .footer-logo .logo-text strong {
+            color: var(--white);
+        }
+
+        .footer-logo .logo-text span {
+            color: var(--bronze);
+        }
+
+        .footer-logo-img {
+            filter: drop-shadow(0 4px 12px rgba(255, 91, 0, 0.22));
         }
 
         .nav-links {
@@ -1595,9 +1629,7 @@
 
             <a href="#home" class="logo" aria-label="Vulpix Digital Solutions home">
 
-                <span class="logo-mark">
-                    <i class="fa-solid fa-bolt"></i>
-                </span>
+                <img src="assets/logo-mark.png" alt="Vulpix Fox Logo Mark" class="brand-logo-img" width="44" height="44">
 
                 <span class="logo-text">
                     <strong>Vulpix</strong>
@@ -2810,11 +2842,9 @@
 
                 <div class="footer-brand">
 
-                    <a href="#home" class="logo footer-logo">
+                    <a href="#home" class="logo footer-logo" aria-label="Vulpix Digital Solutions home">
 
-                        <span class="logo-mark">
-                            <i class="fa-solid fa-bolt"></i>
-                        </span>
+                        <img src="assets/logo-mark.png" alt="Vulpix Fox Logo Mark" class="brand-logo-img footer-logo-img" width="44" height="44">
 
                         <span class="logo-text">
                             <strong>Vulpix</strong>
